@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<configuration>
+    <!-- 定义变量后，可以使“${}”来使用变量 -->
+    <property name="APP_Name" value="proxy" />
+
+    <!-- 使用<contextName>设置名字，用于区分不同应用程序的记录。 -->
+    <contextName>${APP_Name}</contextName>
+
+    <!-- ch.qos.logback.core.ConsoleAppender 控制台输出 -->
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>[1] [%-5level] %d{HH:mm:ss.SSS} [%thread] %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+
+    <!--写入日志文件-->
+    <appender name="fileAppender"  class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>/data/logs/${APP_Name}/${APP_Name}.log</file>
+        <append>true</append>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>
+                /data/logs/${APP_Name}/${APP_Name}-%d{yyyy-MM-dd}_%i.log
+            </fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>1MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <!--<appender name="debugAppender"  class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+        <!--<file>/data/logs/${APP_Name}/${APP_Name}_debug.log</file>-->
+        <!--<append>true</append>-->
+        <!--<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
+            <!--<fileNamePattern>-->
+                <!--/data/logs/${APP_Name}/${APP_Name}_debug-%d{yyyy-MM-dd}_%i.log-->
+            <!--</fileNamePattern>-->
+            <!--<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">-->
+                <!--<maxFileSize>1MB</maxFileSize>-->
+            <!--</timeBasedFileNamingAndTriggeringPolicy>-->
+            <!--<maxHistory>30</maxHistory>-->
+        <!--</rollingPolicy>-->
+        <!--<encoder>-->
+            <!--<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>-->
+        <!--</encoder>-->
+    <!--</appender>-->
+
+
+    <!--<logger name="com.lww.socket" level="DEBUG" additivity="false">-->
+        <!--<appender-ref ref="debugAppender"/>-->
+    <!--</logger>-->
+
+    <!-- 顶级 日志级别 -->
+    <root>
+        <level value="INFO" />
+        <appender-ref ref="console" />
+        <appender-ref ref="fileAppender"/>
+    </root>
+
+</configuration>
