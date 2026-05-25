@@ -515,7 +515,7 @@ module.exports = {
     author: '猫头猫',
     version: "0.2.3",
     appVersion: ">0.1.0-alpha.0",
-    srcUrl: "https://raw.githubusercontent.com/jclww/proxy/master/163.js",
+    srcUrl: "https://gh-proxy.org/https://raw.githubusercontent.com/jclww/proxy/master/163.js",
     cacheControl: "no-store",
     hints: {
         importMusicSheet: [
