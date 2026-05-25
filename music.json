@@ -1,5 +1,5 @@
 {
-    "desc":"https://gh-proxy.org/https://raw.githubusercontent.com/jclww/proxy/master/music.json",
+    "desc": "https://gh-proxy.org/https://raw.githubusercontent.com/jclww/proxy/master/music.json",
     "plugins": [
         {
             "name": "163",
@@ -10,6 +10,21 @@
             "name": "QQ",
             "url": "https://gh-proxy.org/https://raw.githubusercontent.com/jclww/proxy/master/qq.js",
             "version": "0.2.2-alpha.3"
+        },
+        {
+            "name": "酷狗",
+            "url": "https://gh-proxy.org/https://raw.githubusercontent.com/jclww/proxy/master/kugou.js",
+            "version": "0.1.5"
+        },
+        {
+            "name": "酷我",
+            "url": "https://gh-proxy.org/https://raw.githubusercontent.com/jclww/proxy/master/kuwo.js",
+            "version": "0.1.7"
+        },
+        {
+            "name": "咪咕",
+            "url": "https://gh-proxy.org/https://raw.githubusercontent.com/jclww/proxy/master/migu.js",
+            "version": "0.2.2"
         }
     ]
 }
