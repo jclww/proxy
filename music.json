@@ -1,13 +1,14 @@
 {
+    "desc":"https://gh-proxy.org/https://raw.githubusercontent.com/jclww/proxy/master/music.json",
     "plugins": [
         {
             "name": "163",
-            "url": "https://raw.githubusercontent.com/jclww/proxy/master/163.js",
+            "url": "https://gh-proxy.org/https://raw.githubusercontent.com/jclww/proxy/master/163.js",
             "version": "0.2.3"
         },
         {
             "name": "QQ",
-            "url": "https://raw.githubusercontent.com/jclww/proxy/master/qq.js",
+            "url": "https://gh-proxy.org/https://raw.githubusercontent.com/jclww/proxy/master/qq.js",
             "version": "0.2.2-alpha.3"
         }
     ]
